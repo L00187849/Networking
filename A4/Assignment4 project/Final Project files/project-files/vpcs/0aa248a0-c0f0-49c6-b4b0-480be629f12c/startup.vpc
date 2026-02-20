@@ -1,0 +1,2 @@
+set pcname FastChargePC
+ip 10.45.4.80 10.45.4.1 24

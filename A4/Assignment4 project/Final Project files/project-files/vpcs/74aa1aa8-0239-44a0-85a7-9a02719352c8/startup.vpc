@@ -1,0 +1,2 @@
+set pcname ForeCourt2PC
+ip 10.45.11.50 10.45.11.1 24

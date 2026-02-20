@@ -1,0 +1,279 @@
+ForecourtSWA#sh run
+Building configuration...
+
+Current configuration : 6591 bytes
+!
+! Last configuration change at 07:25:03 UTC Fri Feb 20 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname ForecourtSWA
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!         
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 4096
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+!
+interface GigabitEthernet0/0
+ description POS_TERMINALS__VLAN2
+ switchport access vlan 2
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/1
+ description POS_TERMINALS__VLAN2
+ switchport access vlan 2
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/2
+ description POS_TERMINALS__VLAN2
+ switchport access vlan 2
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/3
+ description VOIP_PHONE__VLAN7
+ switchport access vlan 7
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0
+ description WIRELESS_APS__VLAN13
+ switchport access vlan 13
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/1
+ description WIRELESS_APS__VLAN13
+ switchport access vlan 13
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/2
+ description CCTV_CAMERAS__VLAN11
+ switchport access vlan 11
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/3
+ description CCTV_CAMERAS__VLAN11
+ switchport access vlan 11
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0
+ description CCTV_CAMERAS__VLAN11
+ switchport access vlan 11
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/1
+ description CCTV_CAMERAS__VLAN11
+ switchport access vlan 11
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/2
+ negotiation auto
+!
+interface GigabitEthernet2/3
+ negotiation auto
+!
+interface GigabitEthernet3/0
+ description TRUNK_to_SupermarketSW_Gi3/0
+ switchport trunk allowed vlan 1-13,15,16,998-1000
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+!
+interface GigabitEthernet3/1
+ description TRUNK_to_FastCharge_Gi3/1
+ switchport trunk allowed vlan 1-13,15,16,998-1000
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+!
+interface GigabitEthernet3/2
+ description TRUNK_to_ForeCourtSWB_Gi3/0
+ switchport trunk allowed vlan 1-13,15,16,998-1000
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ negotiation auto
+!
+interface Vlan1
+ description ISP
+ ip address 10.45.1.1 255.255.255.0
+!
+interface Vlan2
+ description HOSTS
+ ip address 10.45.2.1 255.255.255.0
+!
+interface Vlan3
+ description STAFF_RADIO
+ ip address 10.45.3.1 255.255.255.0
+!
+interface Vlan4
+ description POWER_INFRA
+ ip address 10.45.4.1 255.255.255.0
+!
+interface Vlan5
+ description CLIENTS
+ ip address 10.45.5.1 255.255.255.0
+!
+interface Vlan6
+ description INFRA_SERVERS
+ ip address 10.45.6.1 255.255.255.0
+!
+interface Vlan7
+ description TELEPHONY
+ ip address 10.45.7.1 255.255.255.0
+!
+interface Vlan8
+ description HVAC
+ ip address 10.45.8.1 255.255.255.0
+!
+interface Vlan9
+ description STORAGE
+ ip address 10.45.9.1 255.255.255.0
+!
+interface Vlan10
+ description NET_MGMT
+ ip address 10.45.10.1 255.255.255.0
+!
+interface Vlan11
+ description CCTV
+ ip address 10.45.11.1 255.255.255.0
+!
+interface Vlan12
+ description SERVER_OOBM
+ ip address 10.45.12.1 255.255.255.0
+!
+interface Vlan13
+ description WIRELESS_APS
+ ip address 10.45.13.1 255.255.255.0
+!
+interface Vlan15
+ description ROUTERS
+ ip address 10.45.15.1 255.255.255.0
+!
+interface Vlan16
+ description LINKS
+ ip address 10.45.16.1 255.255.255.0
+!
+ip forward-protocol nd
+!
+ip http server
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+!
+end
+
+ForecourtSWA#  

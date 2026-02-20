@@ -1,0 +1,220 @@
+ForecourtSWB#sh run        
+Building configuration...
+
+Current configuration : 5120 bytes
+!
+! Last configuration change at 07:15:59 UTC Fri Feb 20 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname ForecourtSWB
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!         
+no ip routing
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+!
+interface GigabitEthernet0/0
+ description FORECOURT_CCTV_CAMERAS
+ switchport access vlan 11
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/1
+ description FORECOURT_CCTV_CAMERAS
+ switchport access vlan 11
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/2
+ description FORECOURT_WIRELESS_APS
+ switchport access vlan 13
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/3
+ description FORECOURT_WIRELESS_APS
+ switchport access vlan 13
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet1/1
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet1/2
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet1/3
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet2/0
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet2/1
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet2/2
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet2/3
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3/0
+ description TRUNK_to_ForecourtSWA_Gi3/2
+ switchport trunk allowed vlan 1-13,15,16,998-1000
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+!
+interface GigabitEthernet3/1
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3/2
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ description UNUSED_PARKED
+ switchport access vlan 1000
+ switchport mode access
+ shutdown
+ negotiation auto
+!
+ip forward-protocol nd
+!
+ip http server
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+!
+end
+
+ForecourtSWB# 

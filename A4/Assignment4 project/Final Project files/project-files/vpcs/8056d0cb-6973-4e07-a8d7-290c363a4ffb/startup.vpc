@@ -1,0 +1,2 @@
+set pcname Battery2PC
+ip 10.45.4.70 10.45.4.1 24
