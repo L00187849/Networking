@@ -23,11 +23,9 @@ The topology includes a backbone WAN network (10.255.255.0/24)
 connecting all major routers, with internal networks connected behind
 each site router.
 
-![](images/media/image1.png){width="6.268055555555556in"
-height="6.844444444444444in"}
+![](images/media/image1.png)
 
-![](images/media/image2.png){width="6.268055555555556in"
-height="5.010416666666667in"}
+![](images/media/image2.png)
 
 **IP Addressing Plan**
 
@@ -87,8 +85,7 @@ Output from **ABR-PET-103 (PetrolSite Router)**:
 
 **Command: Show ip interface brief**
 
-![](images/media/image3.png){width="6.260416666666667in"
-height="1.7916666666666667in"}
+![](images/media/image3.png)
 
 - **GigabitEthernet0/0** -- configured with IP address 10.45.15.103 and
   is **up/up**, confirming connectivity to the PetrolSite LAN.
@@ -114,8 +111,9 @@ command
 
 **Command: Ping 10.255.255.100**
 
-![](images/media/image4.png){width="6.260416666666667in"
-height="0.9479166666666666in"}This confirms successful connectivity
+![](images/media/image4.png)
+
+This confirms successful connectivity
 across the WAN
 
 **Verifying OSPF Neighbour Relationships**
@@ -127,8 +125,7 @@ adjacencies.
 
 **Command: Show ip ospf neighbor**
 
-![](images/media/image5.png){width="6.260416666666667in"
-height="1.28125in"}
+![](images/media/image5.png)
 
 **Verifying Routing Tables**
 
@@ -137,8 +134,7 @@ OSPF.
 
 **Output of ABR-PET-103/ Petrol Site Command: Show ip route**
 
-![](images/media/image6.png){width="6.260416666666667in"
-height="3.4791666666666665in"}
+![](images/media/image6.png)
 
 - **O** = OSPF route within the same area
 
@@ -155,8 +151,7 @@ End-to-end connectivity between networks was tested using ICMP ping.
 
 **Output of Ping Test from DC1 router to PetrolSite Router**
 
-![](images/media/image7.png){width="6.260416666666667in"
-height="1.15625in"}
+![](images/media/image7.png)
 
 This test confirms that the PetrolSite LAN gateway (10.45.15.103) is
 reachable from other routers on the network. Successful ICMP responses
@@ -171,8 +166,7 @@ ping 10.2.15.102
 
 ping 10.45.15.103
 
-![](images/media/image8.png){width="5.59375in"
-height="2.717762467191601in"}
+![](images/media/image8.png)
 
 **From ABR-DC1-101**:
 
@@ -182,8 +176,7 @@ ping 10.2.15.102
 
 ping 10.45.15.103
 
-![](images/media/image9.png){width="5.868465660542432in"
-height="2.851234689413823in"}
+![](images/media/image9.png)
 
 **From ABR-DC2-102:**
 
@@ -191,8 +184,7 @@ ping 10.0.15.100\
 ping 10.1.15.101\
 ping 10.45.15.103
 
-![](images/media/image10.png){width="5.552083333333333in"
-height="2.6975174978127736in"}
+![](images/media/image10.png)
 
 This confirms successful inter-area routing between Head Office, DC1,
 DC2 and Petrol Site
@@ -215,8 +207,7 @@ ping 10.45.5.201
 
 ping 10.45.6.201
 
-![](images/media/image11.png){width="6.260416666666667in"
-height="3.3333333333333335in"}
+![](images/media/image11.png)
 
 Then
 
@@ -229,8 +220,7 @@ ping 10.255.255.100\
 ping 10.1.15.101\
 ping 10.2.15.102
 
-![](images/media/image12.png){width="6.260416666666667in"
-height="3.75in"}
+![](images/media/image12.png)
 
 This confirms that the internal Petrol router can communicate with the
 PetrolSite ABR and can also reach the wider network through OSPF
@@ -248,8 +238,7 @@ ping 10.45.5.201
 
 ping 10.45.6.201
 
-![](images/media/image13.png){width="6.260416666666667in"
-height="2.0in"}
+![](images/media/image13.png)
 
 From **ABR-DC1-101**:
 
@@ -257,8 +246,7 @@ ping 10.45.5.201
 
 ping 10.45.6.201
 
-![](images/media/image14.png){width="6.260416666666667in"
-height="2.0in"}
+![](images/media/image14.png)
 
 From **ABR-DC2-102**:
 
@@ -266,8 +254,9 @@ ping 10.45.5.201
 
 ping 10.45.6.201
 
-![](images/media/image15.png){width="6.260416666666667in"
-height="2.0416666666666665in"}This confirms that the internal PetrolSite
+![](images/media/image15.png)
+
+This confirms that the internal PetrolSite
 networks behind IR-PET-301 are fully advertised and reachable from all
 remote sites.
 
@@ -278,8 +267,7 @@ advertisements were being exchanged correctly.
 
 show ip ospf database on ABR-DC2-102
 
-![](images/media/image16.png){width="5.166666666666667in"
-height="6.260416666666667in"}
+![](images/media/image16.png)
 
 This test confirms that OSPF is fully functioning beyond basic neighbour
 formation and that LSAs are being shared between routers
