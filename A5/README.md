@@ -23,9 +23,11 @@ The topology includes a backbone WAN network (10.255.255.0/24)
 connecting all major routers, with internal networks connected behind
 each site router.
 
-![](images/media/image1.emf)
+![](images/media/image1.png){width="6.268055555555556in"
+height="6.844444444444444in"}
 
-![](images/media/image2.emf)
+![](images/media/image2.png){width="6.268055555555556in"
+height="5.010416666666667in"}
 
 **IP Addressing Plan**
 
