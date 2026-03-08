@@ -1,0 +1,9 @@
+Mar 08 06:20:44.794 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Mar 08 06:20:44.794 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 38241.
+Mar 08 06:20:44.800 HYPERVISOR: exec_cmd: hypervisor version 
+Mar 08 06:20:44.800 HYPERVISOR: exec_cmd: hypervisor working_dir /home/liam/GNS3/projects/Assignment5/project-files/dynamips 
+Mar 08 06:20:44.800 GENERAL: working_dir=/home/liam/GNS3/projects/Assignment5/project-files/dynamips
+Mar 08 06:20:44.800 HYPERVISOR: exec_cmd: ethsw create Switch5 
+Mar 08 06:21:25.677 HYPERVISOR: exec_cmd: nio create_udp udp-666af15f-bd9f-4170-bfdb-9944006ee783 10015 127.0.0.1 10014 
+Mar 08 06:21:25.677 HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-666af15f-bd9f-4170-bfdb-9944006ee783 
+Mar 08 06:21:25.685 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-666af15f-bd9f-4170-bfdb-9944006ee783 1 
