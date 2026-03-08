@@ -27,37 +27,27 @@ each site router.
 
 ![](images/media/image2.png)
 
-**IP Addressing Plan**
+## IP Addressing Plan
 
-  ------------------------------------------------------------
-  **Device**    **Interface**   **IP Address**   **Network**
-  ------------- --------------- ---------------- -------------
-  IR-HO-100     Gi0/0           10.0.15.100      HO LAN
+| Device | Interface | IP Address | Network |
+|------|------|------|------|
+| IR-HO-100 | Gi0/0 | 10.0.15.100 | HO LAN |
+| ABR-DC1-101 | Gi0/0 | 10.1.15.101 | DC1 LAN |
+| ABR-DC2-102 | Gi0/0 | 10.2.15.102 | DC2 LAN |
+| ABR-PET-103 | Gi0/3 | 10.255.255.103 | WAN |
+| IR-PET-301 | Gi0/0 | 10.45.15.201 | Internal Link |
 
-  ABR-DC1-101   Gi0/0           10.1.15.101      DC1 LAN
+## OSPF Design
 
-  ABR-DC2-102   Gi0/0           10.2.15.102      DC2 LAN
+The network uses a hierarchical OSPF design.
 
-  ABR-PET-103   Gi0/3           10.255.255.103   WAN
+| Area | Purpose |
+|-----|-----|
+| Area 0 | WAN backbone |
+| Area 1 | DC1 |
+| Area 2 | DC2 |
+| Area 3 | PetrolSite |
 
-  IR-PET-301    Gi0/0           10.45.15.201     Internal Link
-  ------------------------------------------------------------
-
-**OSPF Design**
-
-The network uses a hierarchical OSPF design:
-
-  ------------------------
-  **Area**   **Purpose**
-  ---------- -------------
-  Area 0     WAN backbone
-
-  Area 1     DC1
-
-  Area 2     DC2
-
-  Area 3     PetrolSite
-  ------------------------
 
 The PetrolSite network uses an Area Border Router to connect internal
 subnets to the backbone.
