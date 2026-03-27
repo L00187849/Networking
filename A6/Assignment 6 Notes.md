@@ -2,8 +2,7 @@
 
 **Network Topology Overview**
 
-![](images/c9fee976d95a2a99f45be628526a4c8f075c311a.png){width="6.5in"
-height="5.03125in"}
+![](images/c9fee976d95a2a99f45be628526a4c8f075c311a.png)
 
 The network topology represents a **centralized WAN architecture**
 connecting multiple sites, including **Data Centre 1, Data Centre 2,
@@ -74,23 +73,19 @@ established dynamically when "interesting traffic" is detected.
 
 **IPsec Tunnel Summary Showing Active Site-to-Site Connectivity**
 
-![](images/2aa61904fa82ca45ce46b18701c249e940803de1.png){width="6.5in"
-height="0.8958333333333334in"}
+![](images/2aa61904fa82ca45ce46b18701c249e940803de1.png)
 
 **Phase 1 Configuration for Site-to-Site Tunnel**
 
-![](images/e12f4f272e384ee5325ab653f46fb06b4f2be9bf.png){width="6.5in"
-height="2.9583333333333335in"}
+![](images/e12f4f272e384ee5325ab653f46fb06b4f2be9bf.png)
 
 **Phase 2 Selectors Defining Encrypted Traffic Domains**
 
-![](images/eb56efc2abe0c838f169a5c273fc8fb6c7cf7d9e.png){width="6.5in"
-height="2.4375in"}
+![](images/eb56efc2abe0c838f169a5c273fc8fb6c7cf7d9e.png)
 
 **End-to-End Connectivity Across VPN Tunnel**
 
-![](images/9aac696a964da447eb4dcfd7407eb8f895192111.png){width="6.5in"
-height="5.385416666666667in"}
+![](images/9aac696a964da447eb4dcfd7407eb8f895192111.png)
 
 **Routing Configuration**
 
@@ -109,8 +104,7 @@ IPsec tunnels rather than being sent over the default WAN route.
 
 **Static Routing Configuration Directing Traffic Through VPN Tunnels**
 
-![](images/db0db3ceea0148afb305ee2df2cbfb92bf54aaf1.png){width="5.916666666666667in"
-height="6.5in"}
+![](images/db0db3ceea0148afb305ee2df2cbfb92bf54aaf1.png)
 
 **Firewall Policies**
 
@@ -144,8 +138,7 @@ Each policy typically included:
 
 **Firewall Policies Enabling Bidirectional VPN Traffic**
 
-![](images/edf48facbc15b20da9eea4418960a0bab5ae4292.png){width="6.5in"
-height="1.9791666666666667in"}
+![](images/edf48facbc15b20da9eea4418960a0bab5ae4292.png)
 
 The screenshot above illustrates the firewall policies configured on the
 DC2 FortiGate device. Policies are implemented in both directions,
